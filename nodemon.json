@@ -1,0 +1,11 @@
+{
+    "env" : {
+        "NODE_ENV": "",
+        "MONGO_USER" : "",
+        "MONGO_PASSWORD" : "",
+        "MONGO_SERVER" : "",
+        "MONGO_DB" : "",
+        "NODE_PORT" : "",
+        "SG_API_KEY" : ""
+    }
+}

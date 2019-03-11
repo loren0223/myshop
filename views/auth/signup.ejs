@@ -1,0 +1,60 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+
+<body>
+    <%- include('../includes/navigation.ejs') %>
+    <%
+        const emailError = errorMessage.find(e => e.param === 'email');
+        const passwordError = errorMessage.find(e => e.param === 'password');
+        const confirmPasswordError = errorMessage.find(e => e.param === 'confirmPassword');
+    %>
+    <main>
+        <form class="login-form" action="/signup" method="POST" novalidate>
+            <div class="form-control">
+                <label for="email">E-Mail</label>
+                <input 
+                    class="<%= emailError ? 'invalid' : '' %>"
+                    type="email" 
+                    name="email" 
+                    id="email" 
+                    value="<%= originInput.email %>"
+                >
+                <% if (emailError) { %>
+                    <span><%= emailError.msg %></span>
+                <% } %>
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input 
+                    class="<%= passwordError ? 'invalid' : '' %>"
+                    type="password" 
+                    name="password" 
+                    id="password" 
+                    value="<%= originInput.password %>"
+                >
+                <% if (passwordError) { %>
+                    <span><%= passwordError.msg %></span>
+                <% } %>
+            </div>
+            <div class="form-control">
+                <label for="confirmPassword">Confirm Password</label>
+                <input 
+                    class="<%= confirmPasswordError ? 'invalid' : '' %>"
+                    type="password" 
+                    name="confirmPassword" 
+                    id="confirmPassword" 
+                    value="<%= originInput.confirmedPassword %>"
+                >
+                <% if (confirmPasswordError) { %>
+                    <span><%= confirmPasswordError.msg %></span>
+                <% } %>
+            </div>
+            
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <button class="btn" type="submit">Signup</button>
+        </form>
+
+    </main>
+<%- include('../includes/end.ejs') %>
