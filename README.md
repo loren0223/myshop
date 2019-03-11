@@ -12,5 +12,5 @@ https://sendgrid.com/pricing/
 4. Install all dependencies via npm
 5. Replace the environment variables in nodemon.json
 6. Start the app via npm, enjoy and have fun
-npm run start:dev
+# npm run start:dev
 
