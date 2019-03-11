@@ -48,7 +48,7 @@ const fileFilter = (req, file, cb) => {
 };
 
 const accessLogStream = fs.createWriteStream(
-  path.join(__dirname, "log", "access.log"),
+  path.join(__dirname, "access.log"),
   { flags: "a" }
 );
 
