@@ -19,6 +19,16 @@ const authRoutes = require("./routes/auth");
 const adminRoutes = require("./routes/admin");
 const shopRoutes = require("./routes/shop");
 
+if (!process.env.NODE_ENV || 
+  !process.env.MONGO_USER || 
+  !process.env.MONGO_PASSWORD ||
+  !process.env.MONGO_SERVER || 
+  !process.env.MONGO_DB || 
+  !process.env.SG_API_KEY) {
+    throw new Error("Please specify the environment variables: NODE_ENV, MONGO_USER, MONGO_PASSWORD, MONGO_SERVER, MONGO_DB, SG_API_KEY");
+  }
+
+
 console.log("Env:" + process.env.NODE_ENV);
 
 // Define package's option object
