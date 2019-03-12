@@ -5,7 +5,7 @@
         "MONGO_PASSWORD" : "",
         "MONGO_SERVER" : "",
         "MONGO_DB" : "",
-        "NODE_PORT" : "",
+        "PORT" : "",
         "SG_API_KEY" : ""
     }
 }
