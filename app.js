@@ -167,7 +167,7 @@ app.use((error, req, res, next) => {
 mongoose
   .connect(MongoDB_URI, { useNewUrlParser: true })
   .then(result => {
-    app.listen(process.env.NODE_PORT || 3000);
+    app.listen(process.env.PORT || 3000);
   })
   .catch(err => {
     console.log(err);
